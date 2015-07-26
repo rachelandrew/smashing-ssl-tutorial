@@ -1,0 +1,9 @@
+---
+:backends: yaml
+:yaml:
+  :datadir: "%{settings::manifestdir}/hiera"
+:hierarchy:
+  - "%{::clientcert}"
+  - "%{::environment}"
+  - config
+:logger: console

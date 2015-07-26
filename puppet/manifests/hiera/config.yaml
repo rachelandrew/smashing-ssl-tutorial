@@ -1,0 +1,37 @@
+mysql_root_password: 'vagrant'
+
+php_upload_max_filesize: '16M'
+php_max_file_uploads: '20'
+php_memory_limit: '128M'
+php_error_reporting: 'E_ALL & ~E_DEPRECATED & ~E_STRICT'
+php_post_max_size: '16M'
+
+php_modules:
+  - "php5-cli"
+  - "php5-mysql"
+  - "php5-gd"
+  - "php5-imagick"
+  - "php5-curl"
+
+apache_vhosts:
+  site1:
+    vhost_docroot: '/var/www/tutorials/smashing_ssl_one'
+    vhost_name: 'smashing_ssl_one.tutorials.eoms'
+    vhost_options: 'All'
+    vhost_port: '8080'
+  site2:
+    vhost_docroot: '/var/www/tutorials/smashing_ssl_two'
+    vhost_name: 'smashing_ssl_two.tutorials.eoms'
+    vhost_options: 'All'
+    vhost_port: '8080'
+
+mysql_db:
+  db_site1:
+    db_name: 'db_site1'
+    db_user: 'vagrant'
+    db_password: 'vagrant'
+  db_site2:
+    db_name: 'db_site2'
+    db_user: 'vagrant'
+    db_password: 'vagrant'
+

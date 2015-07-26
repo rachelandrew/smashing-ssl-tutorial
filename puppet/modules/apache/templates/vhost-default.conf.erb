@@ -1,0 +1,20 @@
+    # ************************************
+    # Default template for vhosts
+    # Managed by Puppet
+    # ************************************
+
+
+    <VirtualHost *:<%= @vhost_port %>>
+      ServerName <%= @vhost_name %>
+      DocumentRoot <%= @vhost_docroot %>
+      <Directory <%= @vhost_docroot %>>
+        Options <%= @vhost_options %>
+        AllowOverride All
+        Order allow,deny
+        allow from all
+      </Directory>
+      ErrorLog /var/log/apache2/<%= @vhost_name %>_error.log
+      LogLevel warn
+      CustomLog /var/log/apache2/<%= @vhost_name %>_access.log combined
+      ServerSignature Off
+    </VirtualHost>
